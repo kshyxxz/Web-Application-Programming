@@ -3,6 +3,15 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="author" content="Kshitiz Shrestha" />
+		<meta
+			name="description"
+			content="A sample web application page with forms, tables, and multimedia elements."
+		/>
+		<meta
+			name="keywords"
+			content="HTML, Web Development, Forms, Tables, Multimedia"
+		/>
 		<title>Web Application Programming</title>
 		<style>
 			table {
@@ -13,7 +22,12 @@
 			td {
 				border: 1px solid black;
 			}
+			h1 {
+				color: #b43371;
+			}
 		</style>
+		<link rel="stylesheet" href="style.css" />
+		<script src="script.js" defer></script>
 	</head>
 	<body>
 		<h1>Login Form</h1>
@@ -121,5 +135,85 @@
 				</tr>
 			</tfoot>
 		</table>
+		<br /><br /><br />
+		<table>
+			<thead>
+				<th>Drinks</th>
+				<th>Snacks</th>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<ol>
+							<li>Coke</li>
+							<li>Sprite</li>
+						</ol>
+					</td>
+					<td>Momo</td>
+				</tr>
+				<tr>
+					<td>
+						<ul>
+							<li>Milk</li>
+							<li>Coffee</li>
+						</ul>
+					</td>
+					<td>Chowmein</td>
+				</tr>
+			</tbody>
+		</table>
+		<br /><br /><br />
+		<h1>Embedded YouTube Video and Image</h1>
+		<iframe
+			width="560"
+			height="315"
+			src="https://www.youtube.com/embed/EHXnTSIcG4w?si=cOcvmhxR9r2Q3xJ_"
+			title="YouTube video player"
+			frameborder="0"
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+			referrerpolicy="strict-origin-when-cross-origin"
+			allowfullscreen
+		></iframe>
+		<br /><br />
+		<h1>Multimedia Elements</h1>
+		<img
+			src="image.png"
+			alt="Profile Picture"
+			width="500"
+			title="purpleViolet"
+		/>
+		<br /><br /><br />
+		<audio controls>
+			<source src="audio.mp3" type="audio/mpeg" />
+			Your browser does not support the audio element.
+		</audio>
+		<br /><br /><br />
+		<video controls width="600">
+			<source src="video.mp4" type="video/mp4" />
+			Your browser does not support the video tag.
+		</video>
+		<br /><br /><br />
+		<h1>Default Value</h1>
+		<input type="text" value="Default Value" />
+		<br /><br /><br />
+		<ol>
+			<li value="10">Apple</li>
+			<li value="20">Banana</li>
+			<li value="30">Grapes</li>
+		</ol>
+		<br /><br /><br />
+		<h1>Progress Bar</h1>
+		<progress value="60" max="100"></progress>
+		<br /><br /><br />
+		<h1>Country Selection</h1>
+		<label for="country">Choose your country:</label>
+		<select name="country" id="country">
+			<option value="np">Nepal</option>
+			<option value="us">USA</option>
+			<option value="uk">UK</option>
+			<option value="in">India</option>
+		</select>
+		<br /><br /><br />
+		<button>Click Me!</button>
 	</body>
 </html>
