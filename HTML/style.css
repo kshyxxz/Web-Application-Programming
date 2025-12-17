@@ -22,4 +22,25 @@ input[type="text"] {
 	margin-y: 20px;
 	margin: 50px 100px;
 	padding: 5px 30px;
+	/* border-top-left-radius: 30px;
+	border-radius: 20pc; */
+	text-align: center;
+}
+
+a {
+	margin-top: 10px;
+	text-decoration: wavy overline magenta 2px;
+	text-transform: capitalize;
+	color: cyan;
+}
+
+html {
+	/* 16px default => 10px */
+	font-size: 62.5%;
+	font-family: "BBH Bartle", sans-serif;
+}
+
+h1 {
+	/* 20px ; 1rem = 10px */
+	font-size: 2rem;
 }
