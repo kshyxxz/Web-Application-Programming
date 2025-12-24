@@ -1,27 +1,78 @@
-#text1 {
+.box {
+	width: 200px;
+	height: 200px;
 	background-color: lightblue;
+	border: 2px solid navy;
+	color: navy;
 }
 
-#text1 + p {
-	background-color: lightgreen;
+.box3 {
+	background-color: purple;
+	position: fixed;
+	top: 20px;
+	right: 20px;
 }
 
-#text1 ~ p {
-	background-color: lightseagreen;
+#head4 {
+	position: sticky;
+	top: 0;
+	left: 0;
+	background-color: navy;
 }
 
-#parent > p {
-	background-color: lightpink;
+p {
+	font-size: 20px;
 }
 
-input:focus {
-	background-color: blueviolet;
-	outline: none;
-	border: none;
-}
-
-input[type="email"]:invalid {
-	border: red;
+p::before {
+	content: "Read this: ";
+	font-weight: bold;
 	color: red;
-	outline: none;
 }
+p::after {
+	content: " [End of paragraph]";
+	font-style: italic;
+	color: gray;
+}
+p::first-line {
+	font-weight: bold;
+}
+p::first-letter {
+	font-size: 200%;
+	color: blue;
+	float: left;
+}
+
+input::placeholder {
+	color: gray;
+	font-style: italic;
+}
+p::selection {
+	background-color: gray;
+	color: black;
+}
+
+h2 {
+	position: relative;
+	color: black;
+	display: inline;
+}
+
+h2::after {
+	content: "";
+	top: 100%;
+	left: 50%;
+	width: 0;
+	height: 2px;
+	background-color: lime;
+	position: absolute;
+	transform: translateX(-50%);
+	transition: all 0.3s ease;
+}
+h2:hover::after {
+	height: 2px;
+	width: 100%;
+	background-color: orange;
+}
+
+/*  flex grow; flex shrink; flex basis; {rebeccapurple}  flex wrap wrap;*/

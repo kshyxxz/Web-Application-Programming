@@ -3,261 +3,143 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="author" content="Kshitiz Shrestha" />
-		<meta
-			name="description"
-			content="A sample web application page with forms, tables, and multimedia elements."
-		/>
-		<meta
-			name="keywords"
-			content="HTML, Web Development, Forms, Tables, Multimedia"
-		/>
-		<title>Web Application Programming</title>
+		<title>Document</title>
 		<link rel="stylesheet" href="style.css" />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=BBH+Bartle&display=swap"
-			rel="stylesheet"
-		/>
-		<script src="script.js" defer></script>
 	</head>
 	<body>
-		<!-- <h1>Login Form</h1>
-		<form action="#">
-			<label for="textInput">Text Input:</label>
-			<input type="text" id="textInput" name="textInput" /><br /><br />
-
-			<label for="passwordInput">Password Input:</label>
-			<input
-				type="password"
-				id="passwordInput"
-				name="passwordInput"
-			/><br /><br />
-
-			<label for="emailInput">Email Input:</label>
-			<input type="email" id="emailInput" name="emailInput" /><br /><br />
-
-			<label for="numberInput">Number Input:</label>
-			<input
-				type="number"
-				id="numberInput"
-				name="numberInput"
-			/><br /><br />
-
-			<label for="dateInput">Date Input:</label>
-			<input type="date" id="dateInput" name="dateInput" /><br /><br />
-
-			<label for="timeInput">Time Input:</label>
-			<input type="time" name="timeInput" id="timeInput" /><br /><br />
-
-			<label for="dateTime">Date Time Local:</label>
-			<input
-				type="datetime-local"
-				name="dateTime"
-				id="dateTime"
-			/><br /><br />
-
-			<label for="colorInput">Color Input:</label>
-			<input type="color" name="colorInput" id="colorInput" /><br /><br />
-
-			<label for="checkboxInput">Checkbox Input:</label>
-			<input
-				type="checkbox"
-				id="checkboxInput"
-				name="checkboxInput"
-			/><br /><br />
-
-			<label for="radioInput1">Male:</label>
-			<input type="radio" id="male" name="radioGroup" value="option1" />
-			<label for="radioInput2">Female:</label>
-			<input
-				type="radio"
-				id="female"
-				name="radioGroup"
-				value="option2"
-			/><br /><br />
-
-			<label for="fileInput">File Input:</label>
-			<input type="file" id="fileInput" name="fileInput" /><br /><br />
-
-			<input type="submit" value="Submit" />
-
-			<input type="reset" value="Reset" />
-		</form>
-		<h1>Table</h1>
-		<table>
-			<caption>
-				Student Record
-			</caption>
-			<thead>
-				<tr>
-					<td>Name</td>
-					<td>Age</td>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-				</tr>
-				<tr>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-				</tr>
-				<tr>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-				</tr>
-				<tr>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-				</tr>
-				<tr>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-				</tr>
-				<tr>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-				</tr>
-			</tbody>
-			<tfoot>
-				<tr>
-					<td colspan="2">End of Student Record</td>
-				</tr>
-			</tfoot>
-		</table>
-		<br /><br /><br />
-		<table>
-			<thead>
-				<th>Drinks</th>
-				<th>Snacks</th>
-			</thead>
-			<tbody>
-				<tr>
-					<td>
-						<ol>
-							<li>Coke</li>
-							<li>Sprite</li>
-						</ol>
-					</td>
-					<td>Momo</td>
-				</tr>
-				<tr>
-					<td>
-						<ul>
-							<li>Milk</li>
-							<li>Coffee</li>
-						</ul>
-					</td>
-					<td>Chowmein</td>
-				</tr>
-			</tbody>
-		</table>
-		<br /><br /><br />
-		<h1>Embedded YouTube Video</h1>
-		<iframe
-			width="560"
-			height="315"
-			src="https://www.youtube.com/embed/EHXnTSIcG4w?si=cOcvmhxR9r2Q3xJ_"
-			title="YouTube video player"
-			frameborder="0"
-			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-			referrerpolicy="strict-origin-when-cross-origin"
-			allowfullscreen
-		></iframe>
-		<br /><br />
-		<h1>Multimedia Elements</h1>
-		<img
-			src="image.png"
-			alt="Profile Picture"
-			width="500"
-			title="purpleViolet"
-		/>
-		<br /><br /><br />
-		<audio controls>
-			<source src="audio.mp3" type="audio/mpeg" />
-			Your browser does not support the audio element.
-		</audio>
-		<br /><br /><br />
-		<video controls width="600">
-			<source src="video.mp4" type="video/mp4" />
-			Your browser does not support the video tag.
-		</video>
-		<br /><br /><br />
-		<h1>Default Value</h1>
-		<input type="text" value="Default Value" />
-		<br /><br /><br />
-		<ol>
-			<li value="10">Apple</li>
-			<li value="20">Banana</li>
-			<li value="30">Grapes</li>
-		</ol>
-		<br /><br /><br />
-		<h1>Progress Bar</h1>
-		<progress value="60" max="100"></progress>
-		<br /><br /><br />
-		<h1>Country Selection</h1>
-		<label for="country">Choose your country:</label>
-		<select name="country" id="country">
-			<option value="np">Nepal</option>
-			<option value="us">USA</option>
-			<option value="uk">UK</option>
-			<option value="in">India</option>
-		</select>
-		<br /><br /><br />
-		<button>Click Me!</button>
-		<br /><br /><br />
+		<h2>Home
+			<div></div>
+		</h2>
+		<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+		<!-- <input type="text" placeholder="this" />
 		<div class="box">
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
-			nobis praesentium rerum, id labore harum dolorem illum quam neque ab
-			consequuntur temporibus dolore incidunt. Facere numquam suscipit
-			nemo ea consequatur?
-		</div> -->
-		<!-- <h1>hello</h1>
-		//new line follows height width
-		<p>something</p>
-		<div>div</div>
-		<section>section</section>
-
-		<span>this is span</span> //no new line, no width height, just takes
-		that much space it requires
-		<a href="image.png">purpleNeon</a>
-
-		<button>submit</button> //follows width height
-		<input type="text" name="" id="" />
-
-		<img src="image.png" alt="" /> //inline but seems like inline-block
-
-		///display: inline/inline-block -->
-
-		<!-- <div class="box">
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
-			vero voluptas porro obcaecati expedita doloremque quasi velit quia
-			ipsam, voluptates omnis aliquid rem quis iure saepe, perferendis
-			accusantium eos fuga?
-			<br />
-			<br />
-			<a href="#">Link</a>
-		</div> -->
-		<div class="linear"></div>
-		<br /><br /><br />
-		<div class="radial"></div>
-		<p id="text1">text1</p>
-		<p>text2</p>
-		<p>text3</p>
-		<p>text4</p>
-		<p>text5</p>
-		<div id="parent">
-			<p>heheh</p>
-			<p>hehehhe</p>
-			<p>hehe</p>
-			<input type="text" />
-			<form action="#">
-				<input type="email" />
-				<input type="submit" value="submit" />
-			</form>
+			<div class="child"></div>
 		</div>
+		<div class="box box2"></div>
+		<div class="box box3"></div>
+		<div style="height: 300vh"></div>
+		<div class="box4">
+			<h1 id="head4">head 4</h1>
+			<p> -->
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
+				mollitia voluptas placeat incidunt distinctio ducimus. Vero
+				velit error assumenda ducimus fuga quasi perspiciatis, magnam
+				facilis rerum nesciunt quae autem alias repellat nemo
+				voluptatibus molestiae numquam nobis fugiat deserunt, voluptate
+				aspernatur quibusdam repellendus pariatur cupiditate. Magni
+				tenetur incidunt autem distinctio animi quibusdam fuga ipsam
+				illo. Delectus deleniti nihil, aspernatur corrupti, dolorum
+				deserunt asperiores alias tenetur at omnis atque laboriosam
+				dolores eum rem. Possimus molestiae debitis consequatur deleniti
+				recusandae provident, deserunt nulla. Nisi perspiciatis
+				distinctio ipsum magni voluptas voluptatem, accusamus odit omnis
+				hic, animi quasi eos corporis totam ab doloremque! Illo beatae
+				delectus assumenda inventore velit? Natus, quasi mollitia. Amet
+				corporis harum ad hic cumque perferendis laudantium, vero aut
+				expedita atque facere dolore totam, illum, unde quos sapiente ab
+				ea dignissimos nemo eaque voluptatem est? Architecto aut
+				voluptatem quod explicabo amet quasi enim voluptatibus odit
+				minus, maxime nostrum eaque laborum dolor culpa, harum debitis.
+				Earum repellendus corrupti exercitationem quibusdam aperiam unde
+				quaerat facere est reiciendis temporibus atque cumque, velit
+				mollitia consequuntur enim sequi aut dolores assumenda
+				dignissimos nisi natus sit repudiandae! Nulla numquam voluptatum
+				rerum rem placeat. Asperiores officia iusto ea quidem itaque,
+				repudiandae, nobis corrupti dolores eveniet quaerat quae nisi
+				tempore dolorem at quod velit. Pariatur neque et dignissimos
+				aliquam accusantium hic vel commodi eveniet quis maiores
+				deserunt saepe, autem ipsa voluptas recusandae labore
+				consequuntur officiis quidem tempore dolore! Quisquam saepe
+				illum at, totam ipsam voluptatem. Aut atque quidem magni
+				delectus eum, earum fuga fugit eos? Non vero sapiente, quasi
+				blanditiis harum voluptatem animi sequi modi nisi eos. Et, totam
+				laborum. Quidem odio odit cum laudantium similique? Corrupti
+				ipsam vel, adipisci possimus numquam architecto dolorem officiis
+				aperiam doloribus mollitia a animi eum provident consequatur
+				nemo! Neque nesciunt totam laborum esse quidem repellat ducimus
+				recusandae consectetur numquam quod iste tenetur deleniti velit,
+				similique suscipit maxime, voluptatum provident ipsam, quo
+				repudiandae! Eum et quos dolor earum facere ipsa obcaecati
+				totam, magni quisquam voluptatem id magnam porro voluptatum
+				repudiandae, aliquam exercitationem soluta eligendi quis nostrum
+				quaerat nobis tenetur eius. Beatae totam similique optio aut
+				rerum eos minus recusandae, dolorem aliquid, pariatur,
+				perspiciatis neque doloremque! Harum saepe perspiciatis neque ad
+				adipisci perferendis repudiandae totam deserunt minus delectus!
+				Velit harum laudantium aspernatur adipisci commodi, blanditiis,
+				necessitatibus soluta culpa omnis doloremque libero similique
+				distinctio doloribus ab dolorem, maiores cupiditate voluptatum
+				ipsum quisquam neque consectetur. Omnis, ducimus excepturi.
+				Molestiae iste excepturi sequi harum ducimus ipsa odit, dolorum
+				optio, magnam fugit facere, suscipit assumenda quia nisi
+				explicabo eveniet esse dolorem enim illum cupiditate illo hic?
+				Delectus vel error iste molestias, quam magnam blanditiis modi
+				quis? Autem aliquam earum libero cum molestiae excepturi culpa.
+				Repellendus voluptate laudantium blanditiis minus facilis
+				quaerat laborum fugit nihil inventore eum placeat, architecto
+				pariatur aspernatur repellat vero! Omnis ex consequuntur
+				laudantium! Quis debitis illum doloremque totam vitae
+				repudiandae beatae itaque aperiam. Impedit dolorem quam beatae
+				cum rem fugit quas, quidem velit molestias nostrum nisi,
+				accusamus reprehenderit magni earum eum aperiam reiciendis
+				pariatur iste. Magni sequi ut excepturi cumque! Reiciendis optio
+				aspernatur culpa placeat quisquam earum magni itaque sapiente
+				quis laborum omnis repudiandae quod explicabo quia, dicta
+				ducimus harum dolores similique eius molestias. Assumenda ullam
+				id officia sit reprehenderit suscipit ipsa modi quos blanditiis
+				doloribus laboriosam perspiciatis, debitis quisquam itaque? Ex,
+				provident enim earum possimus minus omnis, odio aliquam
+				voluptatum consequatur mollitia eligendi rem molestiae
+				blanditiis. Libero, nam. Laborum voluptate omnis quos expedita
+				velit? Beatae repellendus et excepturi quo maiores, iste, veniam
+				quia impedit earum facere magni nemo! Facere quos consequuntur
+				deserunt vel, rerum saepe perspiciatis quaerat, illo quibusdam
+				culpa quas sequi dolorem dolorum illum? Cum, dicta. Error
+				debitis non deserunt vitae explicabo architecto exercitationem
+				rem? Debitis itaque maiores eaque explicabo eos, hic corporis
+				optio! Culpa explicabo aperiam accusantium modi nulla, vero
+				iusto, laboriosam tempora corrupti vel odit officiis magnam fuga
+				ex similique animi! Quam ratione velit odit, minima laudantium
+				nam corporis fugit excepturi sunt, perspiciatis iusto quia fuga
+				possimus numquam! Voluptates incidunt, sint velit voluptatum
+				fuga deleniti doloribus animi perferendis mollitia sapiente
+				corrupti quidem harum? Eius obcaecati ullam eveniet! Rem eaque
+				tempora optio excepturi asperiores reprehenderit aliquid
+				molestiae id. Repellat totam amet error sed. Neque aliquid
+				corporis quae numquam dolorum modi, qui itaque ratione explicabo
+				consectetur voluptas perspiciatis autem illo et animi saepe
+				amet. Quae error nesciunt eveniet ut vel. Exercitationem odio
+				rerum velit neque. Sapiente asperiores molestiae illum ipsa. A
+				necessitatibus officiis aut eaque sed ex itaque provident
+				quibusdam cumque, atque nemo.
+			</p>
+		</div>
+		<div style="height: 300vh"></div>
+		<p>
+			this is a text Lorem ipsum dolor sit amet consectetur adipisicing
+			elit. Placeat nostrum dolorum deleniti ab, architecto quis eaque
+			molestiae est corporis autem dicta eveniet sed veniam et ducimus
+			animi tenetur fugit ut cum! Hic pariatur ea nesciunt quis, ex neque
+			quo est laborum, nulla, beatae impedit modi tempore minus adipisci
+			aperiam qui culpa at officia vero possimus eveniet ratione. Placeat
+			necessitatibus accusantium eveniet similique harum, possimus qui
+			laborum minus officia. Saepe neque nemo cupiditate unde, rem, fuga
+			facilis culpa autem temporibus dolorem obcaecati, fugit suscipit
+			reiciendis? Sequi nam, aperiam dolorum dolor esse fuga quae
+			obcaecati voluptatibus consequatur reiciendis quis! Impedit tenetur,
+			rerum eaque, sit provident, illum id corporis consequuntur quas cum
+			commodi nesciunt amet. Libero consectetur dolore non porro
+			doloremque, vel inventore mollitia veritatis error voluptas, esse
+			nam. Nulla adipisci est quia iste inventore officiis eligendi quod
+			repellendus, id, asperiores maiores? Exercitationem quidem error
+			deserunt neque soluta quaerat sequi praesentium odit numquam
+			consectetur! Ab laudantium quod consequatur doloribus debitis
+			obcaecati incidunt neque, similique beatae nemo. Impedit, amet!
+			Blanditiis, omnis voluptatem fugiat, cum maiores totam commodi
+			suscipit, culpa accusamus ratione iusto placeat illo aliquid? Ut
+			dignissimos blanditiis explicabo ipsa placeat nobis. Aliquam, totam
+			voluptatibus molestiae architecto sunt eaque explicabo reprehenderit
+			facere?
+		</p>
 	</body>
 </html>

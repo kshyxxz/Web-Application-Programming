@@ -97,3 +97,4 @@ const factorial = (n) => {
 	}
 	return fact;
 };
+result = factorial(5);
