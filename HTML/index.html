@@ -3,32 +3,30 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Grid</title>
+		<title>Document</title>
 		<style>
 			.parent {
 				display: grid;
-				grid-template-columns: repeat(3, 1fr);
-				grid-template-rows: repeat(2, 1fr) 100px;
-				gap: 30px;
+				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+				grid-template-rows: repeat(5, 100px);
+				gap: 20px;
 				height: 100vh;
-				justify-items: stretch;
 				align-items: stretch;
-				justify-content: center;
 				align-content: center;
-				grid-template-areas: "sidebar body body" "sidebar body body" "footer footer footer";
 			}
 			.child {
 				background-color: lightblue;
-				border: 2px solid navy;
-				padding: 30px;
 			}
 		</style>
 	</head>
 	<body>
 		<div class="parent">
-			<div style="grid-area: sidebar" class="child child1">1</div>
-			<div style="grid-area: body" class="child child2">2</div>
-			<div style="grid-area: footer" class="child child5">5</div>
+			<div class="child">1</div>
+			<div class="child">2</div>
+			<div class="child">3</div>
+			<div class="child">4</div>
+			<div class="child">5</div>
+			<div class="child">6</div>
 		</div>
 	</body>
 </html>
