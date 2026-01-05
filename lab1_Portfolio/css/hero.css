@@ -6,6 +6,10 @@
 	align-items: flex-start;
 	padding: 0 30px;
 	background-color: #efe7ec;
+	/* background-image: url(../images/background.png); */
+	background-position: bottom right;
+	background-size: contain;
+	background-repeat: no-repeat;
 }
 
 #hero h1 {
@@ -30,9 +34,10 @@
 }
 
 #hero > button {
+	cursor: pointer;
 	width: 300px;
 	border: 1px solid black;
-	border-radius: 2px;
+	border-radius: 30px;
 	padding: 10px 15px;
 	font-size: 20px;
 	background-color: transparent;

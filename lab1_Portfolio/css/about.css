@@ -1,0 +1,14 @@
+#about {
+	background-color: antiquewhite;
+	height: 100vh;
+}
+
+.about_image {
+	float: left;
+	margin-right: 23px;
+}
+
+.about_description {
+	color: rgba(0, 0, 0, 0.7);
+	line-height: 1.6;
+}
