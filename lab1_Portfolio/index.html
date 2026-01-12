@@ -33,8 +33,19 @@
 		<link rel="stylesheet" href="css/common.css" />
 		<link rel="stylesheet" href="css/skill.css" />
 		<link rel="stylesheet" href="css/about.css" />
+		<link rel="stylesheet" href="css/sidebar.css" />
 	</head>
 	<body>
+		<nav class="sidebar">
+			<i class="fa-solid fa-bars sidebar_hamburger" id="hamburger"></i>
+			<div class="sidebar_content">
+				<ul class="sidebar_list">
+					<li><a href="#hero">Home</a></li>
+					<li><a href="#skills">Skills</a></li>
+					<li><a href="#about">About</a></li>
+				</ul>
+			</div>
+		</nav>
 		<section id="hero">
 			<h1>
 				Hi! <br />
@@ -115,6 +126,24 @@
 					</div>
 				</div>
 			</div>
+			<div class="about_skills">
+				<div class="about_skills_box">
+					<i class="fa-solid fa-ear-listen"> </i>
+					<h3>Graphic Design</h3>
+				</div>
+				<div class="about_skills_box">
+					<i class="fa-solid fa-globe"> </i>
+					<h3>Web Design</h3>
+				</div>
+				<div class="about_skills_box">
+					<i class="fa-solid fa-database"> </i>
+					<h3>Database Management</h3>
+				</div>
+				<div class="about_skills_box">
+					<i class="fa-solid fa-mobile"> </i>
+					<h3>Mobile Development</h3>
+				</div>
+			</div>
 		</section>
 		<section class="section" id="about">
 			<p class="section_title">About Me</p>
@@ -148,5 +177,11 @@
 				</div>
 			</div>
 		</section>
+		<script>
+			const hamburger = document.querySelector("#hamburger");
+			hamburger.addEventListener("click", () => {
+				hamburger.classList.toggle("sidebar_hamburger_translate");
+			});
+		</script>
 	</body>
 </html>

@@ -1,5 +1,6 @@
 #skills {
-	height: 100vh;
+	height: auto;
+	align-items: center;
 }
 
 .skill {
@@ -30,4 +31,64 @@
 	position: absolute;
 	top: -20px;
 	right: -16px;
+}
+
+.about_skills_box {
+	padding: 10px;
+	border-bottom: 2px solid black;
+	align-items: center;
+	justify-content: center;
+	align-self: center;
+}
+
+.about_skills_box > i {
+	margin-bottom: 20px;
+	font-size: 25px;
+	color: black;
+}
+
+.about_skills_box > h3 {
+	margin-bottom: 10px;
+	font-size: 22px;
+	text-transform: capitalize;
+	font-weight: 500;
+	text-wrap: wrap;
+}
+
+.about_skills {
+	line-height: 1.6;
+	margin-top: 50px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.about_skills_box:nth-child(2) > i {
+	color: red;
+}
+.about_skills_box:nth-child(2) {
+	border-bottom: 2px solid red;
+}
+.about_skills_box:nth-child(3) > i {
+	color: blue;
+}
+.about_skills_box:nth-child(3) {
+	border-bottom: 2px solid blue;
+}
+.about_skills_box:nth-child(4) > i {
+	color: green;
+}
+.about_skills_box:nth-child(4) {
+	border-bottom: 2px solid green;
+}
+
+@media screen and (min-width: 768px) {
+	.all-skills {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 20px;
+	}
+	#skills {
+		height: 100vh;
+	}
 }
