@@ -39,6 +39,11 @@
 		<nav class="sidebar">
 			<i class="fa-solid fa-bars sidebar_hamburger" id="hamburger"></i>
 			<div class="sidebar_content">
+				<img
+					src="images/profile.png"
+					alt="Profile Picture"
+					id="profile_pic"
+				/>
 				<ul class="sidebar_list">
 					<li><a href="#hero">Home</a></li>
 					<li><a href="#skills">Skills</a></li>
@@ -177,10 +182,16 @@
 				</div>
 			</div>
 		</section>
+		<section class="section" id="contact">
+			<p class="section_title">Get in Touch</p>
+			<p class="section_subtitle">Contact Me</p>
+		</section>
 		<script>
 			const hamburger = document.querySelector("#hamburger");
+			const sidebar = document.querySelector(".sidebar_content");
 			hamburger.addEventListener("click", () => {
 				hamburger.classList.toggle("sidebar_hamburger_translate");
+				sidebar.classList.toggle("sidebar_content_transalte");
 			});
 		</script>
 	</body>
