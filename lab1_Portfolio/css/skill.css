@@ -16,7 +16,6 @@
 	width: 100%;
 	background-color: #d9d9d9;
 	border-radius: 8px;
-	/* overflow: hidden; */
 }
 
 .skill_percent_box {
@@ -25,6 +24,18 @@
 	width: 80%;
 	border-radius: 6px;
 	position: relative;
+	z-index: 1;
+}
+
+.skill_percent_box::after {
+	content: "";
+	position: absolute;
+	top: -2px;
+	right: 0;
+	height: 13px;
+	width: 13px;
+	background-color: inherit;
+	border-radius: 50%;
 }
 
 .skill_percent_box > span {
@@ -90,5 +101,8 @@
 	}
 	#skills {
 		height: 100vh;
+	}
+	.about_skills > div {
+		flex-grow: 2;
 	}
 }
