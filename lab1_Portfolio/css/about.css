@@ -1,25 +1,64 @@
 #about {
-	background-color: antiquewhite;
-	height: 100vh;
+	background-color: #f9f7f6;
+	padding: 4rem 1.5rem 0 1.5rem;
 }
 
-.about_image {
-	float: left;
-	margin-right: 23px;
+.about_container {
+	max-width: 1050px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: 220px 1fr;
+	gap: 2.5rem;
+	align-items: flex-start;
+}
+
+.about_image img {
+	width: 200px;
+	height: 200px;
+	object-fit: cover;
+	border-radius: 12px;
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .about_description {
-	color: rgba(0, 0, 0, 0.7);
-	line-height: 1.6;
+	color: rgba(0, 0, 0, 0.75);
+	line-height: 1.7;
 }
 
-a {
+.about_description p {
+	margin-bottom: 1.2rem;
+}
+
+.about_intro {
+	font-size: 1.05rem;
+	color: rgba(0, 0, 0, 0.9);
+}
+
+.about_description h4 {
+	margin: 1.8rem 0 0.6rem;
+	font-size: 0.95rem;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	color: rgba(0, 0, 0, 0.85);
+}
+
+.github_link > a {
+	color: #000000;
+	font-weight: 700;
 	text-decoration: none;
-	color: inherit;
+}
+
+a:hover {
+	text-decoration: underline;
 }
 
 @media screen and (max-width: 768px) {
-	#about {
-		height: 100%;
+	.about_container {
+		grid-template-columns: 1fr;
+		text-align: center;
+	}
+
+	.about_image img {
+		margin: 0 auto;
 	}
 }

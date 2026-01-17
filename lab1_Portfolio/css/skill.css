@@ -50,6 +50,7 @@
 	align-items: center;
 	justify-content: center;
 	align-self: center;
+	width: 25%;
 }
 
 .about_skills_box > i {
@@ -104,5 +105,10 @@
 	}
 	.about_skills > div {
 		flex-grow: 2;
+	}
+}
+@media screen and (max-width: 768px) {
+	.about_skills_box {
+		width: 100%;
 	}
 }

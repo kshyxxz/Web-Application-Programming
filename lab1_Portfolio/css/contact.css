@@ -1,19 +1,23 @@
+#contact {
+	background-color: #efe7ec;
+	height: 100vh;
+	padding-bottom: 0;
+}
+
 .contact_container {
 	display: grid;
 	grid-template-columns: 0.2fr 0.8fr;
+	margin: 0 auto;
 	grid-template-rows: 69vh;
-	gap: 20px;
+	gap: 25px;
 	padding: 0 100px;
 }
 
-.contact_socials {
-	padding: 15px;
-	border: 1px solid black;
-}
-
+.contact_socials,
 .contact_info {
 	padding: 15px;
-	border: 1px solid black;
+	border-radius: 15px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
 }
 
 .head {
@@ -44,7 +48,7 @@
 	justify-content: space-around;
 }
 
-i {
+.socials > ul > li > a > i {
 	margin-top: 25px;
 }
 
@@ -56,19 +60,40 @@ form > div {
 input,
 textarea {
 	font-size: 15px;
+	padding: auto;
 }
 
 .message_container {
 	padding: 10px;
 }
 
+.submit > button {
+	cursor: pointer;
+	border: 1px solid black;
+	border-radius: 30px;
+	font-size: inherit;
+	font-family: inherit;
+	padding: 2px 10px;
+	font-size: 16px;
+	background-color: transparent;
+	color: inherit;
+	align-self: center;
+}
+
 @media screen and (min-width: 768px) {
 	.message_container {
 		width: 40%;
-		justify-self: center;
+		margin: 0 auto;
 	}
-	button {
-		width: 30%;
+}
+
+@media (max-width: 768px) {
+	.contact_container {
+		grid-template-columns: 1fr;
+		padding: 0 20px;
+	}
+	#contact {
+		height: auto;
 	}
 }
 
@@ -81,4 +106,34 @@ label {
 	display: flex;
 	flex-direction: column;
 	gap: 5px;
+}
+
+.footer {
+	text-align: center;
+	padding: 10px;
+	color: #b3b2b2;
+	position: relative;
+	margin: 15px 0 0 0;
+	width: 100%;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.submit {
+	margin-top: 15px;
+}
+
+textarea {
+	resize: none;
+}
+
+input,
+textarea {
+	border: 1px solid #ccc;
+	outline: none;
+	border-radius: 5px;
+	padding: 8px;
 }
