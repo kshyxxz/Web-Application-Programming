@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -9,6 +9,7 @@
 			name="description"
 			content="Welcome to my portfolio website! Explore my projects, skills, and experiences in web development and design."
 		/>
+		<link rel="icon" href="images/profile.ico" type="image/x-icon" />
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -60,7 +61,7 @@
 				An aspiring Software Developer!
 			</h1>
 			<p>Computer Engineer</p>
-			<button onclick="window.location.href='#contact'">
+			<button onclick="window.location.href = '#contact'">
 				<span>Contact Me</span><i class="fa-regular fa-envelope"></i>
 			</button>
 		</section>
@@ -133,22 +134,78 @@
 					</div>
 				</div>
 			</div>
-			<div class="about_skills">
-				<div class="about_skills_box">
-					<i class="fa-solid fa-ear-listen"> </i>
-					<h3>Graphic Design</h3>
-				</div>
-				<div class="about_skills_box">
-					<i class="fa-solid fa-globe"> </i>
-					<h3>Web Design</h3>
-				</div>
-				<div class="about_skills_box">
-					<i class="fa-solid fa-database"> </i>
-					<h3>Database Management</h3>
-				</div>
-				<div class="about_skills_box">
-					<i class="fa-solid fa-mobile"> </i>
-					<h3>Mobile Development</h3>
+			<div class="future_skill_box">
+				<p class="future_skill_head">Interested in learning:</p>
+				<div class="future_skills">
+					<div class="future_skill_item">
+						<div class="future_skill_logo">
+							<img
+								src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+								alt="TypeScript logo"
+							/>
+						</div>
+						<p class="future_skill_label">TypeScript</p>
+					</div>
+					<div class="future_skill_item">
+						<div class="future_skill_logo">
+							<img
+								src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/trello/trello-plain.svg"
+								alt="Trello logo"
+							/>
+						</div>
+						<p class="future_skill_label">Trello</p>
+					</div>
+					<div class="future_skill_item">
+						<div class="future_skill_logo">
+							<img
+								src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+								alt="Express logo"
+							/>
+						</div>
+						<p class="future_skill_label">Express JS</p>
+					</div>
+					<div class="future_skill_item">
+						<div
+							class="future_skill_logo supabase"
+							aria-hidden="true"
+						>
+							<svg
+								role="img"
+								viewBox="0 0 24 24"
+								xmlns="http://www.w3.org/2000/svg"
+								aria-hidden="true"
+							>
+								<title>Supabase</title>
+								<defs>
+									<linearGradient
+										id="supabaseGrad"
+										x1="0%"
+										y1="0%"
+										x2="100%"
+										y2="100%"
+									>
+										<stop
+											offset="0%"
+											stop-color="#8ef6d7"
+										/>
+										<stop
+											offset="50%"
+											stop-color="#3ecf8e"
+										/>
+										<stop
+											offset="100%"
+											stop-color="#2bbf8a"
+										/>
+									</linearGradient>
+								</defs>
+								<path
+									fill="url(#supabaseGrad)"
+									d="M21.362 9.354H12V.396a.396.396 0 0 0-.716-.233L2.203 12.424l-.401.562a1.04 1.04 0 0 0 .836 1.659H12v8.959a.396.396 0 0 0 .716.233l9.081-12.261.401-.562a1.04 1.04 0 0 0-.836-1.66z"
+								/>
+							</svg>
+						</div>
+						<p class="future_skill_label">Supabase</p>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -186,9 +243,6 @@
 						I work primarily with frontend and web fundamentals
 						including HTML, CSS, JavaScript, React, and Tailwind
 						CSS. I enjoy building small but complete applications
-						such as interactive web apps, games, and utilities,
-						focusing on clean structure, usability, and practical
-						problem-solving.
 					</p>
 
 					<h4>How I Learn</h4>

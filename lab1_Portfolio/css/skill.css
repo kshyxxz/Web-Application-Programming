@@ -1,6 +1,9 @@
+/* Skills section layout */
 #skills {
 	height: auto;
-	align-items: center;
+	/* use the same padding as other sections so titles align consistently */
+	padding: 60px 20px;
+	box-sizing: border-box;
 }
 
 .skill {
@@ -16,6 +19,22 @@
 	width: 100%;
 	background-color: #d9d9d9;
 	border-radius: 8px;
+}
+
+.future_skill_box {
+	width: 100%;
+	box-sizing: border-box;
+	margin: 18px 0 0 0;
+	padding: 18px;
+	border-radius: 12px;
+	background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+	box-shadow: 0 8px 24px rgba(16, 24, 40, 0.06);
+	transition:
+		transform 160ms ease,
+		box-shadow 160ms ease;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
 }
 
 .skill_percent_box {
@@ -44,54 +63,78 @@
 	right: -16px;
 }
 
-.about_skills_box {
-	padding: 10px;
-	border-bottom: 2px solid black;
+/* Future skills grid (logos) - fills remaining space */
+.future_skills {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+	gap: 20px;
+	align-items: center;
+	justify-items: center;
+	width: 100%;
+	padding-top: 8px;
+}
+
+.future_skill_item {
+	/* use a two-row grid so the label is not part of the logo flex area */
+	display: grid;
+	grid-template-rows: auto auto;
+	align-items: center;
+	justify-items: center;
+	width: 100%;
+	max-width: 160px;
+}
+
+.future_skill_logo {
+	display: flex;
 	align-items: center;
 	justify-content: center;
-	align-self: center;
-	width: 25%;
+	width: 100%;
+	/* scale logos responsively; keeps #skills at 100vh on desktop */
+	height: clamp(56px, 10vh, 120px);
+	background: white;
+	border-radius: 10px;
+	box-shadow: 0 6px 18px rgba(15, 23, 36, 0.04);
+	padding: 8px;
 }
 
-.about_skills_box > i {
-	margin-bottom: 20px;
-	font-size: 25px;
-	color: black;
+.future_skill_logo i {
+	font-size: 3.2rem;
+	color: #2c98f0;
+	display: block;
 }
 
-.about_skills_box > h3 {
-	margin-bottom: 10px;
-	font-size: 22px;
-	text-transform: capitalize;
-	font-weight: 500;
-	text-wrap: wrap;
+.future_skill_logo img {
+	width: auto;
+	height: 100%;
+	object-fit: contain;
+	display: block;
 }
 
-.about_skills {
-	line-height: 1.6;
-	margin-top: 50px;
+/* Inline SVG sizing for Supabase (filled directly in SVG) */
+.future_skill_logo.supabase {
+	width: 72px;
+	height: 72px;
 	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
+	align-items: center;
+	justify-content: center;
+}
+.future_skill_logo.supabase svg {
+	width: 72px;
+	height: 72px;
+	display: block;
 }
 
-.about_skills_box:nth-child(2) > i {
-	color: red;
+.future_skill_label {
+	margin-top: 8px;
+	font-weight: 600;
 }
-.about_skills_box:nth-child(2) {
-	border-bottom: 2px solid red;
-}
-.about_skills_box:nth-child(3) > i {
-	color: blue;
-}
-.about_skills_box:nth-child(3) {
-	border-bottom: 2px solid blue;
-}
-.about_skills_box:nth-child(4) > i {
-	color: green;
-}
-.about_skills_box:nth-child(4) {
-	border-bottom: 2px solid green;
+
+.future_skill_head {
+	margin: 0 0 20px 0;
+	font-size: 18px;
+	font-weight: 700;
+	color: #0f1724;
+	letter-spacing: 0.4px;
 }
 
 @media screen and (min-width: 768px) {
@@ -100,15 +143,41 @@
 		grid-template-columns: repeat(2, 1fr);
 		gap: 20px;
 	}
+
 	#skills {
 		height: 100vh;
+		display: flex;
+		flex-direction: column;
 	}
-	.about_skills > div {
-		flex-grow: 2;
+
+	/* let future_skill_box fill remaining vertical space on wide screens */
+	.future_skill_box {
+		flex: 1 1 auto;
+		justify-content: center;
+	}
+	.future_skills {
+		width: 100%;
+	}
+	.future_skill_item {
+		max-width: 180px;
 	}
 }
-@media screen and (max-width: 768px) {
-	.about_skills_box {
-		width: 100%;
+
+@media screen and (max-width: 767px) {
+	.future_skills {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 16px;
+	}
+	.future_skill_logo i {
+		font-size: 2.4rem;
+	}
+	.future_skill_logo img {
+		width: 56px;
+		height: 56px;
+	}
+
+	.future_skill_logo.supabase {
+		width: 56px;
+		height: 56px;
 	}
 }
