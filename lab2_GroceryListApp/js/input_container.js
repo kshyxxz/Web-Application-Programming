@@ -14,10 +14,11 @@ const addItem = () => {
 			return;
 		}
 	}
-	items.push(item);
+	items.unshift(item);
 	inputItem.value = "";
-	items.reverse();
-	sessionStorage.setItem("items", items);
+	sessionStorage.setItem("items", JSON.stringify(items));
 };
 
 addButton.addEventListener("click", addItem);
+
+const foods = JSON.parse(sessionStorage.getItem("items")) || [];
