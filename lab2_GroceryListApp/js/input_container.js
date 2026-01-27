@@ -5,6 +5,8 @@ const addButton = document.querySelector("#addButton");
 
 const listItems = document.querySelector(".list_items");
 
+let count = 0;
+
 const addItem = (e) => {
 	if (e.target.innerText === "Add") {
 		let items = JSON.parse(sessionStorage.getItem("items")) || [];
@@ -19,8 +21,10 @@ const addItem = (e) => {
 			}
 		}
 		items.unshift(item);
+		count++;
 		inputItem.value = "";
 		sessionStorage.setItem("items", JSON.stringify(items));
+		sessionStorage.setItem("count", count);
 
 		listItems.innerHTML =
 			`<div class="list_item">
