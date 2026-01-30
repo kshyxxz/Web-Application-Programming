@@ -26,12 +26,12 @@ const addItem = (e) => {
 		sessionStorage.setItem("count", count);
 
 		listItems.innerHTML =
-			`<div class="list_item">
-					<input type="checkbox"/>
-					<input type="text" readonly value="${item}" name="${item}"/>
-					<button class="btn_edit">Edit</button>
-					<button class="btn_delete">Delete</button>
-				</div>` + listItems.innerHTML;
+			`<div class="list_item flex items-center gap-2">
+						<input type="checkbox" class="form-checkbox h-4 w-4 text-blue-400"/>
+						<input type="text" class="bg-gray-800 text-gray-100 border border-gray-700 px-2 py-1 rounded" readonly value="${item}" name="${item}"/>
+						<button class="btn_edit bg-gray-700 hover:bg-gray-600 text-gray-100 px-3 py-1 rounded ml-2 shadow">Edit</button>
+						<button class="btn_delete bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded ml-2 shadow">Delete</button>
+					</div>` + listItems.innerHTML;
 	} else {
 		let items = JSON.parse(sessionStorage.getItem("items")) || [];
 		let new_value = e.target.previousElementSibling.value;

@@ -4,20 +4,33 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Grocery List</title>
+		<script src="https://cdn.tailwindcss.com"></script>
 		<link rel="stylesheet" href="css/global.css" />
 		<link rel="stylesheet" href="css/list_container.css" />
 		<link rel="stylesheet" href="css/input_container.css" />
 	</head>
-	<body>
-		<div class="input_container">
-			<div class="input_box">
-				<input type="text" class="inputItem" id="inputItem" />
-				<button class="addButton" id="addButton">Add</button>
+	<body class="bg-gray-900 min-h-screen antialiased text-gray-100">
+		<div class="container mx-auto p-6 max-w-lg">
+			<div class="input_container flex justify-center">
+				<div class="input_box flex gap-2 items-center">
+					<input
+						type="text"
+						class="inputItem bg-gray-800 text-gray-100 border border-gray-700 px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+						id="inputItem"
+					/>
+					<button
+						class="addButton bg-gray-800 hover:bg-gray-700 text-gray-100 px-4 py-2 rounded-md shadow"
+						id="addButton"
+					>
+						Add
+					</button>
+				</div>
+			</div>
+			<div class="list_container">
+				<div class="list_items"></div>
 			</div>
 		</div>
-		<div class="list_container">
-			<div class="list_items"></div>
-		</div>
+
 		<script src="js/input_container.js" type="module" defer></script>
 		<script src="js/list_container.js" type="module" defer></script>
 	</body>
