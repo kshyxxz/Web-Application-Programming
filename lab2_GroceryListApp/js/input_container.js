@@ -26,11 +26,11 @@ const addItem = (e) => {
 		localStorage.setItem("count", count);
 
 		listItems.innerHTML =
-			`<div class="list_item flex items-center justify-center gap-3 rounded-xl bg-gray-900 p-3 border border-gray-700 shadow-sm hover:shadow-md transition">
+			`<div class="list_item flex items-center justify-center gap-3 rounded-xl bg-white p-3 border border-gray-200 shadow-sm hover:shadow-md transition">
 						<input type="checkbox" class="form-checkbox h-4 w-4 text-blue-500 rounded flex-shrink-0"/>
-						<input type="text" class="bg-gray-900 text-gray-100 text-lg px-2 py-1 rounded flex-1 min-w-0 focus:outline-none" readonly value="${item}" name="${item}"/>
-						<button class="btn_edit bg-gray-700 hover:bg-gray-600 text-gray-100 px-3 py-1.5 rounded-lg text-sm shadow transition flex-shrink-0">Edit</button>
-						<button class="btn_delete bg-red-600 hover:bg-red-700 text-white px-3 py-1.5 rounded-lg text-sm shadow transition flex-shrink-0">Delete</button>
+						<input type="text" class="bg-gray-100 text-gray-900 text-lg px-2 py-1 rounded-lg flex-1 min-w-0 focus:outline-none" readonly value="${item}" name="${item}"/>
+						<button class="btn_edit bg-gray-100 hover:bg-gray-200 text-gray-900 px-3 py-1.5 rounded-lg text-sm shadow transition flex-shrink-0">Edit</button>
+						<button class="btn_delete bg-red-600 hover:bg-red-700 text-white px-3 py-1.5 rounded-lg text-sm shadow transition flex-shrink-0" aria-label="Delete">x</button>
 					</div>` + listItems.innerHTML;
 	} else {
 		let items = JSON.parse(localStorage.getItem("items")) || [];
