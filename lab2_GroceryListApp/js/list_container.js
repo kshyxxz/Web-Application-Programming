@@ -9,7 +9,7 @@ if (Items.length > 0) {
 			list_Items.innerHTML +
 			`<div class="list_item flex items-center gap-3 rounded-xl bg-gray-900 p-3 border border-gray-700 shadow-sm hover:shadow-md transition">
 						<input type="checkbox" class="form-checkbox h-4 w-4 text-blue-500 rounded flex-shrink-0" ${Item.completed ? "checked" : ""}/>
-						<input type="text" class="bg-gray-800 text-gray-100 border border-gray-700 px-2 py-1 rounded flex-1 min-w-0" readonly value="${Item.value}" name="${Item.value}"/>
+						<input type="text" class="${Item.completed ? "line-through" : ""} bg-gray-900 text-gray-100 text-lg px-2 py-1 rounded flex-1 min-w-0 focus:outline-none" readonly value="${Item.value}" name="${Item.value}"/>
 						<button class="btn_edit bg-gray-700 hover:bg-gray-600 text-gray-100 px-3 py-1.5 rounded-lg text-sm shadow transition flex-shrink-0">Edit</button>
 						<button class="btn_delete bg-red-600 hover:bg-red-700 text-white px-3 py-1.5 rounded-lg text-sm shadow transition flex-shrink-0">Delete</button>
 					</div>`;
@@ -25,7 +25,7 @@ list_Items.addEventListener("change", (e) => {
 				list_Items.innerHTML +
 				`<div class="list_item flex items-center gap-3 rounded-xl bg-gray-900 p-3 border border-gray-700 shadow-sm hover:shadow-md transition">
 						<input type="checkbox" class="form-checkbox h-4 w-4 text-blue-500 rounded flex-shrink-0" checked/>
-						<input type="text" class="strike bg-gray-800 text-gray-100 border border-gray-700 px-2 py-1 rounded flex-1 min-w-0" readonly value="${e.target.nextElementSibling.value}" name="${e.target.nextElementSibling.value}"/>
+						<input type="text" class="line-through bg-gray-900 text-gray-100 text-lg px-2 py-1 rounded flex-1 min-w-0 focus:outline-none" readonly value="${e.target.nextElementSibling.value}" name="${e.target.nextElementSibling.value}"/>
 						<button class="btn_edit bg-gray-700 hover:bg-gray-600 text-gray-100 px-3 py-1.5 rounded-lg text-sm shadow transition flex-shrink-0">Edit</button>
 						<button class="btn_delete bg-red-600 hover:bg-red-700 text-white px-3 py-1.5 rounded-lg text-sm shadow transition flex-shrink-0">Delete</button>
 					</div>`;
@@ -38,7 +38,7 @@ list_Items.addEventListener("change", (e) => {
 			list_Items.innerHTML =
 				`<div class="list_item flex items-center gap-3 rounded-xl bg-gray-900 p-3 border border-gray-700 shadow-sm hover:shadow-md transition">
 						<input type="checkbox" class="form-checkbox h-4 w-4 text-blue-500 rounded flex-shrink-0"/>
-						<input type="text" class="bg-gray-800 text-gray-100 border border-gray-700 px-2 py-1 rounded flex-1 min-w-0" readonly value="${e.target.nextElementSibling.value}" name="${e.target.nextElementSibling.value}"/>
+						<input type="text" class="bg-gray-900 text-gray-100 text-lg px-2 py-1 rounded flex-1 min-w-0 focus:outline-none" readonly value="${e.target.nextElementSibling.value}" name="${e.target.nextElementSibling.value}"/>
 						<button class="btn_edit bg-gray-700 hover:bg-gray-600 text-gray-100 px-3 py-1.5 rounded-lg text-sm shadow transition flex-shrink-0">Edit</button>
 						<button class="btn_delete bg-red-600 hover:bg-red-700 text-white px-3 py-1.5 rounded-lg text-sm shadow transition flex-shrink-0">Delete</button>
 					</div>` + list_Items.innerHTML;
