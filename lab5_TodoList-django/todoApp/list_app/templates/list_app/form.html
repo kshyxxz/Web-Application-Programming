@@ -1,11 +1,11 @@
-{% extends 'list_app/base.html' %}
-{% block title %}Todo Form{% endblock %}
-{% block content %}
+{% extends 'list_app/base.html' %} {% block title %}Todo Form{% endblock %} {%
+block content %}
 <h1>{% if task %}Edit{% else %}Create{% endif %} Todo</h1>
 <form method="post" novalidate>
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit" class="btn btn-primary mt-2">Save</button>
-  <a href="{% url 'list_app:todo_list' %}" class="btn btn-secondary mt-2">Cancel</a>
+	{% csrf_token %} {{ form.as_p }}
+	<button type="submit" class="btn btn-primary mt-2">Save</button>
+	<a href="{% url 'list_app:todo_list' %}" class="btn btn-secondary mt-2"
+		>Cancel</a
+	>
 </form>
 {% endblock %}
