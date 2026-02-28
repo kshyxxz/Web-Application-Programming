@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Mouse Event Example</title>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	</head>
+	<body>
+		<div>
+			<img
+				id="myImg"
+				src="../lab1_Portfolio/images/profile.png"
+				height="50px"
+				width="50px"
+			/>
+			<p id="desc">This is a beautiful nature image.</p>
+		</div>
+
+		<script>
+			$(document).ready(function () {
+				$("#myImg").mouseenter(function () {
+					$("#desc").text("You are hovering over the image!");
+				});
+
+				$("#myImg").mouseleave(function () {
+					$("#desc").text("This is a beautiful nature image.");
+				});
+			});
+		</script>
+
+		<p>Kshitiz Shrestha</p>
+	</body>
+</html>

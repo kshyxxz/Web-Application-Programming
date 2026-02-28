@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+	<head>
+		<title>AJAX Example</title>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	</head>
+	<body>
+		<button id="loadData">Load Data</button>
+		<div id="result"></div>
+
+		<script>
+			$(document).ready(function () {
+				$("#loadData").click(function () {
+					$.ajax({
+						url: "https://jsonplaceholder.typicode.com/posts/1",
+						type: "GET",
+						success: function (response) {
+							$("#result").html(
+								"<h3>" +
+									response.title +
+									"</h3><p>" +
+									response.body +
+									"</p>",
+							);
+						},
+					});
+				});
+			});
+		</script>
+
+		<p>Kshitiz Shrestha</p>
+	</body>
+</html>

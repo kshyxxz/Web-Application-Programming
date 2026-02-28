@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+	<head>
+		<title>jQuery Selectors</title>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	</head>
+	<body>
+		<h2 id="heading">ID Selector</h2>
+		<p class="text">Class Selector</p>
+		<p>Element Selector</p>
+		<input type="text" name="username" placeholder="Attribute Selector" />
+
+		<script>
+			$(document).ready(function () {
+				// ID Selector
+				$("#heading").css("color", "red");
+
+				// Class Selector
+				$(".text").css("font-weight", "bold");
+
+				// Element Selector
+				$("p").css("font-size", "18px");
+
+				// Attribute Selector
+				$("input[name='username']").css("background-color", "yellow");
+			});
+		</script>
+
+		<p>Kshitiz Shrestha</p>
+	</body>
+</html>

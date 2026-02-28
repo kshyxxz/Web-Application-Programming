@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Method Chaining</title>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	</head>
+	<body>
+		<button id="styleBtn">Apply Effects</button>
+		<p id="para">This is a sample paragraph.</p>
+
+		<script>
+			$(document).ready(function () {
+				$("#styleBtn").click(function () {
+					$("#para")
+						.css("color", "blue")
+						.slideUp(1000)
+						.slideDown(1000)
+						.css("font-size", "20px")
+						.fadeOut(1000)
+						.fadeIn(1000);
+				});
+			});
+		</script>
+
+		<p>Kshitiz Shrestha</p>
+	</body>
+</html>

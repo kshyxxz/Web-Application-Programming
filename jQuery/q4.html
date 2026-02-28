@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Show Hide Example</title>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	</head>
+	<body>
+		<button id="showBtn">Show</button>
+		<button id="hideBtn">Hide</button>
+
+		<div
+			id="box"
+			style="width: 200px; height: 100px; background: lightblue"
+		>
+			This is a box
+		</div>
+
+		<script>
+			$(document).ready(function () {
+				$("#showBtn").click(function () {
+					$("#box").show(1000);
+				});
+
+				$("#hideBtn").click(function () {
+					$("#box").hide(1000);
+				});
+			});
+		</script>
+
+		<p>Kshitiz Shrestha</p>
+	</body>
+</html>

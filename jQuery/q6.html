@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Form Validation</title>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	</head>
+	<body>
+		<form id="myForm">
+			Name: <input type="text" id="name" /><br /><br />
+			Gender:
+			<input type="radio" name="gender" value="Male" /> Male
+			<input type="radio" name="gender" value="Female" /> Female
+			<br /><br />
+			Phone: <input type="text" id="phone" /><br /><br />
+			Hobbies:
+			<input type="checkbox" name="hobby" value="Sports" /> Sports
+			<input type="checkbox" name="hobby" value="Music" /> Music
+			<br /><br />
+			Appointment:
+			<input type="datetime-local" id="appointment" /><br /><br />
+			Country:
+			<select id="country">
+				<option value="">Select</option>
+				<option>India</option>
+				<option>Nepal</option>
+				<option>USA</option></select
+			><br /><br />
+			Resume: <input type="file" id="resume" /><br /><br />
+			Email: <input type="text" id="email" /><br /><br />
+			Password: <input type="password" id="password" /><br /><br />
+			Confirm Password:
+			<input type="password" id="confirmPassword" /><br /><br />
+			<input type="submit" value="Submit" />
+		</form>
+		<script>
+			$(document).ready(function () {
+				$("#myForm").submit(function (e) {
+					e.preventDefault();
+					let name = $("#name").val().trim();
+					let gender = $("input[name='gender']:checked").val();
+					let phone = $("#phone").val().trim();
+					let hobbies = $("input[name='hobby']:checked").length;
+					let appointment = $("#appointment").val();
+					let country = $("#country").val();
+					let resume = $("#resume")[0].files[0];
+					let email = $("#email").val().trim();
+					let password = $("#password").val();
+					let confirmPassword = $("#confirmPassword").val();
+					if (
+						!name ||
+						!gender ||
+						!phone ||
+						hobbies == 0 ||
+						!appointment ||
+						!country ||
+						!resume ||
+						!email ||
+						!password ||
+						!confirmPassword
+					) {
+						alert("All fields are required");
+						return;
+					}
+					if (new Date(appointment) < new Date()) {
+						alert("Appointment date cannot be in the past");
+						return;
+					}
+					let allowedTypes = [
+						"application/pdf",
+						"application/msword",
+						"application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+						"image/jpeg",
+						"image/png",
+					];
+					if (!allowedTypes.includes(resume.type)) {
+						alert("Resume must be PDF, Word, or Image");
+						return;
+					}
+					if (resume.size > 2 * 1024 * 1024) {
+						alert("File size must be less than 2MB");
+						return;
+					}
+					let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+					if (!emailPattern.test(email)) {
+						alert("Invalid Email");
+						return;
+					}
+					let phonePattern = /^[0-9]{10}$/;
+					if (!phonePattern.test(phone)) {
+						alert("Invalid Phone Number");
+						return;
+					}
+					let passPattern =
+						/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/;
+					if (!passPattern.test(password)) {
+						alert("Password must be strong");
+						return;
+					}
+					if (password !== confirmPassword) {
+						alert("Passwords do not match");
+						return;
+					}
+					alert("Form Submitted Successfully!");
+				});
+			});
+		</script>
+		<p>Kshitiz Shrestha</p>
+	</body>
+</html>
