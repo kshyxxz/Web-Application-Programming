@@ -1,5 +1,8 @@
 import ProductCard from "./components/ProductCard";
 import Counter from "./components/Counter";
+import LoginStatus from "./components/LoginStatus";
+import RegistrationForm from "./components/RegistrationForm";
+import WindowResizeListener from "./components/WindowResizeListener";
 
 export default function App() {
 	const laptops = [
@@ -28,6 +31,9 @@ export default function App() {
 			<ProductCard laptop={laptops[1]} />
 			<ProductCard laptop={laptops[2]} />
 			<Counter />
+			<LoginStatus />
+			<RegistrationForm />
+			<WindowResizeListener />
 			<p>kshyxxz</p>
 		</div>
 	);
