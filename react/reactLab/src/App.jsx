@@ -1,8 +1,19 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navigation from "./components/Navigation";
+import Home from "./components/Home";
+import About from "./components/About";
+import UserProfile from "./components/UserProfile";
 import ProductCard from "./components/ProductCard";
 import Counter from "./components/Counter";
 import LoginStatus from "./components/LoginStatus";
 import RegistrationForm from "./components/RegistrationForm";
 import WindowResizeListener from "./components/WindowResizeListener";
+import FetchUsers from "./components/FetchUsers";
+import FocusInput from "./components/FocusInput";
+import Card from "./components/Card";
+import GrandParent from "./components/GrandParent";
+import Parent from "./components/Parent";
+import Child from "./components/Child";
 
 export default function App() {
 	const laptops = [
@@ -34,6 +45,31 @@ export default function App() {
 			<LoginStatus />
 			<RegistrationForm />
 			<WindowResizeListener />
+			<FetchUsers />
+			<FocusInput />
+			<BrowserRouter>
+				<Navigation />
+				<Routes>
+					<Route path="/home" element={<Home />} />
+					<Route path="/about" element={<About />} />
+					<Route path="/user/:userId" element={<UserProfile />} />
+				</Routes>
+			</BrowserRouter>
+			<Card>
+				<p>This is a simple text paragraph inside the card.</p>
+			</Card>
+			<Card>
+				<button>Click Me</button>
+			</Card>
+			<Card>
+				<h3>List Example</h3>
+				<ul>
+					<li>Item One</li>
+					<li>Item Two</li>
+					<li>Item Three</li>
+				</ul>
+			</Card>
+			<GrandParent />
 			<p>kshyxxz</p>
 		</div>
 	);
