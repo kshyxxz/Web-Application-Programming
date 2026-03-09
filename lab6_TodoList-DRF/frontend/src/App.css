@@ -1,0 +1,131 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+	--zinc-950: #09090b;
+	--zinc-900: #18181b;
+	--zinc-800: #27272a;
+	--zinc-700: #3f3f46;
+	--zinc-600: #52525b;
+	--zinc-500: #71717a;
+	--zinc-300: #d4d4d8;
+	--zinc-200: #e4e4e7;
+	--zinc-100: #f4f4f5;
+	--danger-500: #ef4444;
+}
+
+body {
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	background: radial-gradient(
+		circle at top,
+		var(--zinc-700) 0%,
+		var(--zinc-900) 45%,
+		var(--zinc-950) 100%
+	);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 24px 16px;
+	color: var(--zinc-100);
+	min-height: 100vh;
+}
+
+.app {
+	background: rgba(24, 24, 27, 0.95);
+	border: 1px solid var(--zinc-700);
+	border-radius: 12px;
+	padding: 32px;
+	width: 100%;
+	max-width: 480px;
+	margin-inline: auto;
+	box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+}
+
+h1 {
+	font-size: 1.6rem;
+	margin-bottom: 24px;
+	color: var(--zinc-100);
+}
+
+.input-row {
+	display: flex;
+	gap: 8px;
+	margin-bottom: 20px;
+}
+
+input[type="text"],
+.input-row input {
+	flex: 1;
+	padding: 10px 14px;
+	border: 1px solid var(--zinc-600);
+	background: var(--zinc-900);
+	color: var(--zinc-100);
+	border-radius: 8px;
+	font-size: 1rem;
+	outline: none;
+}
+input:focus {
+	border-color: var(--zinc-500);
+	box-shadow: 0 0 0 2px rgba(113, 113, 122, 0.22);
+}
+
+button {
+	padding: 10px 18px;
+	background: var(--zinc-500);
+	color: white;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	font-size: 0.95rem;
+}
+button:hover {
+	background: var(--zinc-600);
+}
+
+ul {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+li {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	padding: 10px 14px;
+	background: var(--zinc-800);
+	border: 1px solid var(--zinc-700);
+	border-radius: 8px;
+}
+
+li.done span {
+	text-decoration: line-through;
+	color: var(--zinc-500);
+}
+
+li span {
+	flex: 1;
+	color: var(--zinc-100);
+}
+
+button.delete {
+	background: transparent;
+	color: var(--danger-500);
+	padding: 4px 8px;
+	font-size: 1rem;
+}
+button.delete:hover {
+	background: rgba(239, 68, 68, 0.14);
+}
+
+.empty,
+.count {
+	color: var(--zinc-300);
+	font-size: 0.9rem;
+	margin-top: 16px;
+	text-align: center;
+}
