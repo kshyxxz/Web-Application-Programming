@@ -20,3 +20,17 @@ media/
 # IDEs
 .vscode/
 .idea/
+
+# Python
+**/venv/
+**/.env
+**/__pycache__/
+*.pyc
+*.pyo
+**/staticfiles/
+**/db.sqlite3
+
+# Node
+**/node_modules/
+**/.env.local
+**/dist/
