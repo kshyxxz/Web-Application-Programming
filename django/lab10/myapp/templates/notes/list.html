@@ -1,0 +1,10 @@
+<h2>Notes - Kshitiz</h2>
+<a href="{% url 'note_create' %}">Add Note</a>
+{% for note in notes %}
+<div>
+	<h3>{{ note.title }}</h3>
+	<p>{{ note.content }}</p>
+	<a href="{% url 'note_update' note.pk %}">Edit</a>
+	<a href="{% url 'note_delete' note.pk %}">Delete</a>
+</div>
+{% endfor %}

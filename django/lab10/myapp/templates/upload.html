@@ -1,0 +1,11 @@
+<h2>File Upload - Kshitiz</h2>
+{% if error %}
+<p style="color: red">{{ error }}</p>
+{% endif %} {% if success %}
+<p style="color: green">File uploaded successfully!</p>
+{% endif %}
+<form method="POST" enctype="multipart/form-data">
+	{% csrf_token %}
+	<input type="file" name="file" />
+	<button type="submit">Upload</button>
+</form>
