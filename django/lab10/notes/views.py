@@ -1,3 +1,4 @@
+from django.core.exceptions import ValidationError
 from django.shortcuts import get_object_or_404, redirect, render
 
 from .models import Note
@@ -9,12 +10,16 @@ def note_list(request):
 
 
 def note_create(request):
+    error = None
     if request.method == 'POST':
         title = request.POST['title']
         content = request.POST['content']
-        Note.objects.create(title=title, content=content)
-        return redirect('note_list')
-    return render(request, 'notes/form.html', {'name': 'Your Name'})
+        try:
+            Note.objects.create(title=title, content=content)
+            return redirect('note_list')
+        except ValidationError as e:
+            error = e.message_dict.get('content', [str(e)])[0]
+    return render(request, 'notes/form.html', {'name': 'Your Name', 'error': error})
 
 
 def note_update(request, pk):
