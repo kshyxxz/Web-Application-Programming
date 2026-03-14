@@ -21,11 +21,3 @@ class Submission(models.Model):
     tu_reg = models.CharField(max_length=20)
     email = models.EmailField()
     project_file = models.FileField(upload_to='projects/')
-    
-class Note(models.Model):
-    title = models.CharField(max_length=200)
-    content = models.TextField()
-    created_at = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return self.title
