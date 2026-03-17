@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+	<body>
+		<button onclick="toggleMenu()">Menu</button>
+		<ul id="submenu" style="display: none">
+			<li>Item 1</li>
+			<li>Item 2</li>
+		</ul>
+
+		<script>
+			function toggleMenu() {
+				let menu = document.getElementById("submenu");
+				menu.style.display =
+					menu.style.display === "none" ? "block" : "none";
+			}
+		</script>
+	</body>
+</html>

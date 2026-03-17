@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+	<body>
+		<form onsubmit="return validate();">
+			Username: <input type="text" id="user" /><br />
+			Age: <input type="number" id="age" /><br />
+			Password: <input type="password" id="pass" /><br />
+			<input type="submit" />
+		</form>
+
+		<script>
+			function validate() {
+				let u = document.getElementById("user").value;
+				let a = document.getElementById("age").value;
+				let p = document.getElementById("pass").value;
+
+				if (!u || !a || !p) {
+					alert("All fields required");
+					return false;
+				}
+
+				if (a < 8 || a > 60) {
+					alert("Age must be 8–60");
+					return false;
+				}
+
+				if (!/^[A-Za-z].*\d$/.test(p) || p.length < 6) {
+					alert("Password invalid");
+					return false;
+				}
+
+				return true;
+			}
+		</script>
+	</body>
+</html>

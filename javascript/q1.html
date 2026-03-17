@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Basic Arithmetic</title>
+		<style>
+			body {
+				font-family: Arial;
+			}
+			.box {
+				width: 250px;
+				margin: 50px auto;
+				padding: 20px;
+				border: 2px solid black;
+				border-radius: 10px;
+				text-align: center;
+			}
+			input,
+			button {
+				margin: 5px;
+				padding: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<h3>Basic Arithmetic Functions</h3>
+
+			<input type="number" id="a" placeholder="Operand" /><br />
+			<input type="number" id="b" placeholder="Operand" /><br />
+
+			<button onclick="calc('+')">Add</button>
+			<button onclick="calc('-')">Sub</button>
+			<button onclick="calc('*')">Mul</button><br />
+			<button onclick="calc('/')">Div</button>
+			<button onclick="calc('%')">Mod</button>
+
+			<h4>Result:</h4>
+			<input type="text" id="res" readonly />
+		</div>
+
+		<script>
+			function calc(op) {
+				let a = parseFloat(document.getElementById("a").value);
+				let b = parseFloat(document.getElementById("b").value);
+				let r;
+				if (isNaN(a) || isNaN(b)) {
+					r = "Enter numbers";
+				} else {
+					if (op == "+") r = a + b;
+					else if (op == "-") r = a - b;
+					else if (op == "*") r = a * b;
+					else if (op == "/")
+						r = b != 0 ? a / b : "Cannot divide by 0";
+					else if (op == "%") r = a % b;
+				}
+				document.getElementById("res").value = r;
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+	<body>
+		<p id="text">
+			JavaScript programming language is powerful and flexible.
+		</p>
+
+		<script>
+			let p = document.getElementById("text");
+			let words = p.innerHTML.split(" ");
+
+			for (let i = 0; i < words.length; i++) {
+				if (words[i].length > 8) {
+					words[i] =
+						"<span style='background:red'>" + words[i] + "</span>";
+				}
+			}
+
+			p.innerHTML = words.join(" ");
+		</script>
+	</body>
+</html>

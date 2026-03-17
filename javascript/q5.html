@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+	<body>
+		<div>
+			<img
+				src="https://via.placeholder.com/150"
+				onmouseover="changeText('Mouse Over Image')"
+				onmouseout="changeText('Original Description')"
+			/>
+			<p id="desc">Original Description</p>
+		</div>
+
+		<script>
+			function changeText(text) {
+				document.getElementById("desc").innerHTML = text;
+			}
+		</script>
+	</body>
+</html>
