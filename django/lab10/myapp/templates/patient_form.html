@@ -1,8 +1,16 @@
-<h2>Patient Registration - Kshitiz</h2>
+<h2>Patient Registration</h2>
 {% if success %}
 <p style="color: green">Patient saved!</p>
 {% endif %}
 <form method="POST">
-	{% csrf_token %} {{ form.as_p }}
-	<button type="submit">Submit</button>
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
 </form>
+
+{% if form.errors %}
+<p style="color: red">Please correct the form errors.</p>
+{% endif %}
+
+<p><a href="{% url 'dashboard' %}">Back to Dashboard</a></p>

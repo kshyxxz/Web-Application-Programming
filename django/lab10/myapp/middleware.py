@@ -1,4 +1,8 @@
 import time
+import logging
+
+
+logger = logging.getLogger(__name__)
 
 class RequestTimingMiddleware:
     def __init__(self, get_response):
@@ -6,10 +10,16 @@ class RequestTimingMiddleware:
 
     def __call__(self, request):
         start = time.time()
-        print(f"[REQUEST] {request.method} {request.path}")
+        logger.info("[REQUEST] %s %s", request.method, request.path)
 
         response = self.get_response(request)
 
         duration = time.time() - start
-        print(f"[RESPONSE] {request.path} took {duration:.4f}s | Status: {response.status_code}")
+        response['X-Request-Duration'] = f"{duration:.4f}s"
+        logger.info(
+            "[RESPONSE] %s took %.4fs | Status: %s",
+            request.path,
+            duration,
+            response.status_code,
+        )
         return response

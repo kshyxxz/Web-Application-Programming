@@ -24,15 +24,20 @@ def note_create(request):
 
 def note_update(request, pk):
     note = get_object_or_404(Note, pk=pk)
+    error = None
     if request.method == 'POST':
         note.title = request.POST['title']
         note.content = request.POST['content']
-        note.save()
-        return redirect('note_list')
-    return render(request, 'notes/form.html', {'note': note, 'name': 'Your Name'})
+        try:
+            note.save()
+            return redirect('note_list')
+        except ValidationError as e:
+            error = e.message_dict.get('content', [str(e)])[0]
+    return render(request, 'notes/form.html', {'note': note, 'name': 'Your Name', 'error': error})
 
 
 def note_delete(request, pk):
     note = get_object_or_404(Note, pk=pk)
-    note.delete()
+    if request.method == 'POST':
+        note.delete()
     return redirect('note_list')

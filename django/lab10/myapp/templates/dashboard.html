@@ -1,0 +1,13 @@
+<h2>Dashboard</h2>
+<p>Welcome, {{ student_username }}</p>
+
+<ul>
+  <li><a href="{% url 'patient_form' %}">Patient Registration</a></li>
+  <li><a href="{% url 'register' %}">User Registration</a></li>
+  <li><a href="{% url 'upload_file' %}">Image Upload</a></li>
+  <li><a href="{% url 'submit_project' %}">Project Submission</a></li>
+  <li><a href="{% url 'appointment' %}">Comprehensive Form</a></li>
+  <li><a href="{% url 'note_list' %}">Notes CRUD</a></li>
+</ul>
+
+<p><a href="{% url 'logout' %}">Logout</a></p>

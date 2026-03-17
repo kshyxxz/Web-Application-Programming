@@ -1,8 +1,16 @@
-<h2>Register - Kshitiz</h2>
+<h2>User Registration</h2>
 {% if success %}
 <p style="color: green">Registered successfully!</p>
 {% endif %}
 <form method="POST">
-	{% csrf_token %} {{ form.as_p }}
-	<button type="submit">Register</button>
+	{% csrf_token %}
+    {{ form.non_field_errors }}
+    {{ form.as_p }}
+    <button type="submit">Register</button>
 </form>
+
+{% if form.errors %}
+<p style="color: red">Please fix the validation errors.</p>
+{% endif %}
+
+<p><a href="{% url 'login' %}">Go to Login</a></p>

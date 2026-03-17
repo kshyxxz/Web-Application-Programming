@@ -1,13 +1,21 @@
 from django import forms
 from .models import Patient
 from .models import Submission
+from .models import UserRegistration
+from .models import ImageUpload
 import re
 import datetime
 
 class PatientForm(forms.ModelForm):
+    dob = forms.DateField(
+        input_formats=['%Y-%m-%d'],
+        error_messages={'invalid': 'Date must be in YYYY-MM-DD format.'},
+        widget=forms.DateInput(attrs={'type': 'date'})
+    )
+
     class Meta:
         model = Patient
-        fields = '__all__'
+        fields = ['name', 'patient_id', 'mobile', 'gender', 'address', 'dob', 'doctor_name']
 
     def clean_mobile(self):
         mobile = self.cleaned_data['mobile']
@@ -17,15 +25,14 @@ class PatientForm(forms.ModelForm):
 
     def clean_dob(self):
         dob = self.cleaned_data['dob']
-        import datetime
-        # Django already validates date format; just return
         return dob
     
-class UserRegForm(forms.Form):
-    full_name = forms.CharField(max_length=40)
-    email = forms.EmailField()
-    username = forms.CharField()
+class UserRegForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput)
+
+    class Meta:
+        model = UserRegistration
+        fields = ['full_name', 'email', 'username', 'password']
 
     def clean_username(self):
         username = self.cleaned_data['username']
@@ -53,6 +60,22 @@ class SubmissionForm(forms.ModelForm):
         if f.size > 5 * 1024 * 1024:
             raise forms.ValidationError("File size must be less than 5MB.")
         return f
+
+
+class ImageUploadForm(forms.ModelForm):
+    class Meta:
+        model = ImageUpload
+        fields = ['image']
+
+    def clean_image(self):
+        image = self.cleaned_data['image']
+        allowed_ext = ['jpg', 'jpeg', 'png', 'gif']
+        ext = image.name.split('.')[-1].lower()
+        if ext not in allowed_ext:
+            raise forms.ValidationError('Only image files (jpg, jpeg, png, gif) are allowed.')
+        if image.size > 2 * 1024 * 1024:
+            raise forms.ValidationError('File size must be less than 2MB.')
+        return image
     
 class AppointmentForm(forms.Form):
     GENDER_CHOICES = [('M', 'Male'), ('F', 'Female'), ('O', 'Other')]
@@ -62,7 +85,7 @@ class AppointmentForm(forms.Form):
     name = forms.CharField(max_length=100)
     gender = forms.ChoiceField(choices=GENDER_CHOICES)
     hobbies = forms.MultipleChoiceField(choices=HOBBY_CHOICES, widget=forms.CheckboxSelectMultiple)
-    appointment_datetime = forms.DateTimeField(widget=forms.DateTimeInput(attrs={'type': 'datetime-local'}))
+    appointment_date = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}))
     country = forms.ChoiceField(choices=COUNTRY_CHOICES)
     resume = forms.FileField()
     email = forms.EmailField()
@@ -70,9 +93,9 @@ class AppointmentForm(forms.Form):
     password = forms.CharField(widget=forms.PasswordInput)
     confirm_password = forms.CharField(widget=forms.PasswordInput)
 
-    def clean_appointment_datetime(self):
-        dt = self.cleaned_data['appointment_datetime']
-        if dt < datetime.datetime.now():
+    def clean_appointment_date(self):
+        dt = self.cleaned_data['appointment_date']
+        if dt < datetime.date.today():
             raise forms.ValidationError("Appointment date cannot be in the past.")
         return dt
 
@@ -88,8 +111,8 @@ class AppointmentForm(forms.Form):
 
     def clean_phone(self):
         phone = self.cleaned_data['phone']
-        if not re.match(r'^(9\d{9}|01\d{7})$', phone):
-            raise forms.ValidationError("Phone must match 9XXXXXXXXX or 01XXXXXXX format.")
+        if not re.match(r'^(98|97|96)\d{8}$', phone):
+            raise forms.ValidationError("Phone must be 10 digits starting with 98, 97, or 96.")
         return phone
 
     def clean_password(self):

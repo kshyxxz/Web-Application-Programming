@@ -5,6 +5,11 @@
 	<h3>{{ note.title }}</h3>
 	<p>{{ note.content }}</p>
 	<a href="{% url 'note_update' note.pk %}">Edit</a>
-	<a href="{% url 'note_delete' note.pk %}">Delete</a>
+	<form method="post" action="{% url 'note_delete' note.pk %}" style="display: inline">
+		{% csrf_token %}
+		<button type="submit">Delete</button>
+	</form>
 </div>
+{% empty %}
+<p>No notes found.</p>
 {% endfor %}
